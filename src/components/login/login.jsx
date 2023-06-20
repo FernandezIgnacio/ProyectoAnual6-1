@@ -1,8 +1,8 @@
 import (AppRegistry) from 'react-native';
-import App from './app'
-import (Name a AppName) from './app.json'
+import App from './app';
+import (Name a AppName) from './app.json';
 
-
+AppRegistry . Register component (AppName , ()=>App);
 function Login () {
 
 return (
