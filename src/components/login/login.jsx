@@ -16,9 +16,8 @@ return (
 <Button type="button"
 css = { Buttonstyle }
 onClick =  { OnClick }
-variant="primary">
 
-Login
+variant="primary">
 
 <Button/>
 </form>
