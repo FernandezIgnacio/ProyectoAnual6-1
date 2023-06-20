@@ -16,8 +16,8 @@ return (
 <Button type="button"
 css = { Buttonstyle }
 onClick =  { OnClick }
-
-variant="primary">
+disabled = { indisabled }>
+LOGIN
 
 <Button/>
 </form>
