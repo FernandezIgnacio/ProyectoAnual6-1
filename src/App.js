@@ -4,7 +4,8 @@ function App() {
   return (
   <AuthProvider>
   <routes>
-  
+   <route path='/login' element={ <login/> }/>
+   
   </routes>
     <div className="App">
       <header className="App-header">
