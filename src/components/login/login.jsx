@@ -1,6 +1,6 @@
 import (AppRegistry) from 'react-native';
 import App from './app'
-
+import (Name a AppName) from './app.json'
 
 
 function Login () {
