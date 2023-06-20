@@ -5,7 +5,7 @@ function App() {
   <AuthProvider>
   <routes>
    <route path='/login' element={ <login/> }/>
-   
+   <route path=' /register' element= { < register />} />
   </routes>
     <div className="App">
       <header className="App-header">
