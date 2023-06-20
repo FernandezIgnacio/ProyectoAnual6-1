@@ -3,6 +3,9 @@ import './App.css';
 function App() {
   return (
   <AuthProvider>
+  <routes>
+  
+  </routes>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
