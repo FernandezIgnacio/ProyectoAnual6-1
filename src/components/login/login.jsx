@@ -1,3 +1,8 @@
+import (AppRegistry) from 'react-native';
+
+
+
+
 function Login () {
 
 return (
