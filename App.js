@@ -1,6 +1,6 @@
 import React from 'react';
 import { NativeRouter, Route } from 'react-router-native';
-import login from './components/login/login.jsx';
+import Login from './components/login/Login.jsx';
 
 const App = () => {
   return (
