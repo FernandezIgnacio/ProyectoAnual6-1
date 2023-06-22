@@ -5,12 +5,12 @@ export default function login() {
   return (
     <View>
         <TextInput
-    style={styles.input}
-    onChangeText={onChangeNumber}
-    value={number}
-    placeholder="useless placeholder"
-    keyboardType="numeric"
-  />
+        style={styles.input}
+        onChangeText={onChangeNumber}
+        value={number}
+        placeholder="useless placeholder"
+        keyboardType="numeric"
+        />
     </View>
   )
 }
