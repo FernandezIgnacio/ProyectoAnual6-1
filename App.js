@@ -5,7 +5,7 @@ import Login from "./src/components/Login";
 
 export default function App() {
   return (
-    <View style={ {marginTop: Constants.statusBarHeight/* Margin predefinido */, flexGrow: 1 }}>
+    <View style={ {marginTop: Constants.statusBarHeight, flexGrow: 1 }}>
       <Login />
     </View>
   );
