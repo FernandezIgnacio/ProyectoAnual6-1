@@ -22,7 +22,7 @@ checkFirebaseConnection();
 
 export default function App() {
   return (
-    <View style={ {marginTop: Constants.statusBarHeight, flexGrow: 1 }}>
+    <View style={ {marginTop: Constants.statusBarHeight, flexGrow: 1,justifyContent: 'center' }}>
       <Login />
       
     </View>
