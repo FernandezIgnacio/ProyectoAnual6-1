@@ -4,7 +4,21 @@ import { View ,Text } from 'react-native';
 import Login from "./src/components/Login";
 
 import { app } from './firebase'; // Ruta correcta al archivo firebase.js
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
+const auth = getAuth(app);
+
+const checkFirebaseConnection = () => {
+  onAuthStateChanged(auth, (user) => {
+    if (user =null) {
+      console.log('Firebase está conectado');
+    } else {
+      console.log('Firebase no está conectado');
+    }
+  });
+};
+
+checkFirebaseConnection();
 
 export default function App() {
   return (
