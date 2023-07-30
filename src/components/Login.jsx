@@ -7,10 +7,12 @@ const Login = ({ onLogin }) => {
     const [emailError, setEmailError] = useState(false);
 
     const handleLogin = () => {
-        if (!email.includes('@') || !email.includes('.com')) {
+        if (!email.includes('@')  || !email.includes('.com')){
         setEmailError(true);
         return;
-        }
+        }else
+        setEmailError(false);
+        return;
 
         // Aquí puedes realizar la lógica de autenticación con el backend o cualquier otro proceso necesario
         // Por simplicidad, simplemente llamaremos a la función `onLogin` con el email y contraseña ingresados
