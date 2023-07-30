@@ -36,6 +36,7 @@
 import React from "react";
 import Constants from 'expo-constants'; //importo para utilizar el margin predefinido para no colicinar con la barra superior
 import { View } from 'react-native';
+import { NativeRouter } from "react-router-native";
 
 import Login from "./src/components/Login";
 
@@ -54,9 +55,10 @@ checkFirebaseConnection();
 
 export default function App() {
   return (
-    <View style={ {marginTop: Constants.statusBarHeight, flexGrow: 1,justifyContent: 'center', textAlign: 'center'}}>
+    <NativeRouter style={ {marginTop: Constants.statusBarHeight, flexGrow: 1,justifyContent: 'center', textAlign: 'center'}}>
       <Login />
-    </View>
+    </NativeRouter>
+    
   );
 }
 
