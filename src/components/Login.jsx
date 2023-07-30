@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Text } from 'react-native';
+import { Route } from 'react-router-native';
+import  Home  from "./src/components/Home.jsx";
 
 const Login = ({ onLogin }) => {
     const [email, setEmail] = useState('');
@@ -14,30 +16,32 @@ const Login = ({ onLogin }) => {
         setEmailError(false);
         return;
 
-        // Aquí puedes realizar la lógica de autenticación con el backend o cualquier otro proceso necesario
-        // Por simplicidad, simplemente llamaremos a la función `onLogin` con el email y contraseña ingresados
         onLogin(email, password);
     };
 
     return (
         <View style={styles.container}>
-        <TextInput
-            placeholder="Email"
-            onChangeText={text => setEmail(text)}
-            value={email}
-            style={[styles.input, emailError && styles.inputError]}
-        />
-        {emailError && <Text style={styles.errorText}>Por favor, ingresa una dirección de correo electrónico válida.</Text>}
-        <TextInput
-            placeholder="Contraseña"
-            onChangeText={text => setPassword(text)}
-            value={password}
-            secureTextEntry
-            style={styles.input}
-        />
-        <View style={styles.buttonContainer} >
-            <Button title="Iniciar sesión" onPress={handleLogin} />
-        </View>
+            <TextInput
+                placeholder="Email"
+                onChangeText={text => setEmail(text)}
+                value={email}
+                style={[styles.input, emailError && styles.inputError]}
+            />
+            {emailError && <Text style={styles.errorText}>Por favor, ingresa una dirección de correo electrónico válida.</Text>}
+            <TextInput
+                placeholder="Contraseña"
+                onChangeText={text => setPassword(text)}
+                value={password}
+                secureTextEntry
+                style={styles.input}
+            />
+            <View style={styles.buttonContainer} >
+                <Button title="Iniciar sesión" onPress={handleLogin} >
+                    <Route path='/' exact>
+
+                    </Route>
+                </Button>
+            </View>
         </View>
     );
 };
