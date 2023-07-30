@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Text } from 'react-native';
-import { Route } from 'react-router-native';
-import  Home  from "./src/components/Home.jsx";
+import { NativeRouter } from 'react-router-native';
+import { Home } from "./Home.jsx";
 
 const Login = ({ onLogin }) => {
     const [email, setEmail] = useState('');
@@ -36,11 +36,7 @@ const Login = ({ onLogin }) => {
                 style={styles.input}
             />
             <View style={styles.buttonContainer} >
-                <Button title="Iniciar sesión" onPress={handleLogin} >
-                    <Route path='/' exact>
-
-                    </Route>
-                </Button>
+                <Button title="Iniciar sesión" onPress={handleLogin} />
             </View>
         </View>
     );
