@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, Text, Image } from 'react-native';
+import { View, TextInput, Button, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import { NativeRouter } from 'react-router-native';
 import { Home } from "./Home.jsx";
 
@@ -26,7 +26,7 @@ const Login = ({ onLogin }) => {
                 placeholder="Email"
                 onChangeText={text => setEmail(text)}
                 value={email}
-                style={[styles.input, emailError && styles.inputError]}
+                style={[styles.input, styles.mail, emailError && styles.inputError]}
             />
             {emailError && <Text style={styles.errorText}>Por favor, ingresa una dirección de correo electrónico válida.</Text>}
             <TextInput
@@ -36,9 +36,12 @@ const Login = ({ onLogin }) => {
                 secureTextEntry
                 style={styles.input}
             />
-            <View style={styles.buttonContainer} >
-                <Button title="Iniciar sesión" onPress={handleLogin} />
-            </View>
+            <TouchableOpacity
+                style={styles.button}
+                onPress={handleLogin}
+            >
+                <Text style={{color: '#012A4A',fontSize: 16,}}>INICIAR SESIÓN</Text>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -49,16 +52,23 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         paddingHorizontal: 16,
+        backgroundColor: '#468FAF',
     },
     Img: {
         width: 150, 
         height: 150,
-        marginTop: -300,
+        marginTop: -130,
     },
+    mail:{
+       marginTop:100,
+    },
+
     input: {
         height: 40,
         width:350,
-        borderColor: 'gray',
+        borderColor: '#013A63',
+        color:'#013A63',
+        backgroundColor:'#89C2D9',
         borderWidth: 1,
         marginBottom: 12,
         paddingHorizontal: 8,
@@ -70,13 +80,20 @@ const styles = StyleSheet.create({
     },
     errorText: {
         color: 'red',
-        marginBottom: 12,
+        marginTop: -10,
+        marginBottom: 10,
     },
     buttonContainer: {
-        borderRadius: 10, 
+        borderRadius: 5, 
         overflow: 'hidden',
     },
-
+    
+    button: {
+        backgroundColor: '#A9D6E5',
+        paddingVertical: 8, 
+        paddingHorizontal: 8,
+        borderRadius: 5,
+    },
 });
 
 export default Login;
