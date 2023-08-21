@@ -20,8 +20,8 @@ checkFirebaseConnection();
 
 export default function App() {
   return (
-    <View style={ { flexGrow: 1,justifyContent: 'center', textAlign: 'center', backgroundColor:'#',}}>
-      <StatusBar backgroundColor="#2D00F7" barStyle="light-content" />
+    <View style={ { flexGrow: 1,justifyContent: 'center', textAlign: 'center',}}>
+      <StatusBar backgroundColor="#2A6F97" barStyle="default" />
       <Login />  
     </View>
     
