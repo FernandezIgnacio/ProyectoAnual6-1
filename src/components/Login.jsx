@@ -28,7 +28,9 @@ const Login = ({ onLogin }) => {
                 value={email}
                 style={[styles.input, styles.mail, emailError && styles.inputError]}
             />
+
             {emailError && <Text style={styles.errorText}>POR FAVOR, INGRESE UN EMAIL VALIDO.</Text>}
+            
             <TextInput
                 placeholder="Contraseña"
                 onChangeText={text => setPassword(text)}
@@ -36,6 +38,7 @@ const Login = ({ onLogin }) => {
                 secureTextEntry
                 style={styles.input}
             />
+            
             <TouchableOpacity
                 style={styles.button}
                 onPress={handleLogin}
