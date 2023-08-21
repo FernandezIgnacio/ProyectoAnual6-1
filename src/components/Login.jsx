@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import { View, TextInput, StyleSheet, Text, Image, TouchableOpacity, Icon } from 'react-native';
 import { NativeRouter } from 'react-router-native';
 import { Home } from "./Home.jsx";
 
@@ -27,6 +27,11 @@ const Login = ({ onLogin }) => {
                 onChangeText={text => setEmail(text)}
                 value={email}
                 style={[styles.input, styles.mail, emailError && styles.inputError]}
+                rightIcon= {
+                    <Icon
+                        Type=""
+                    />
+                }
             />
 
             {emailError && <Text style={styles.errorText}>POR FAVOR, INGRESE UN EMAIL VALIDO.</Text>}
