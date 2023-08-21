@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     Img: {
         width: 150, 
         height: 150,
-        marginTop: -50,
+        marginTop: -300,
     },
     input: {
         height: 40,
