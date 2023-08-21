@@ -1,5 +1,5 @@
 import React from "react";
-import Constants from 'expo-constants'; //importo para utilizar el margin predefinido para no colicinar con la barra superior
+//import Constants from 'expo-constants'; //importo para utilizar el margin predefinido para no colicinar con la barra superior
 import { View} from 'react-native'
 import { Route } from "react-router-native";
 
@@ -20,7 +20,7 @@ checkFirebaseConnection();
 
 export default function App() {
   return (
-    <View style={ {marginTop: Constants.statusBarHeight, flexGrow: 1,justifyContent: 'center', textAlign: 'center'}}>
+    <View style={ { flexGrow: 1,justifyContent: 'center', textAlign: 'center', backgroundColor:'#',}}>
       <Login />  
     </View>
     
