@@ -21,7 +21,7 @@ const Login = ({ onLogin }) => {
 
     return (
         <View style={styles.container}>
-            <Image source={require('./icon.png')} style={ styles.Img }/>
+            <Image source={require('./Images/icon.png')} style={ styles.Img }/>
             <TextInput
                 placeholder="Email"
                 onChangeText={text => setEmail(text)}
