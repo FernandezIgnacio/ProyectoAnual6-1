@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, StyleSheet, Text, Image, TouchableOpacity, Icon } from 'react-native';
+import { View, TextInput, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 import { NativeRouter } from 'react-router-native';
 import { Home } from "./Home.jsx";
 
@@ -23,7 +23,7 @@ const Login = () => {
         <View style={styles.container}>
             <Image source={require('../../assets/icon.png')} style={ styles.Img }/>
             <TextInput
-                placeholder="Email"
+                placeholder="Correo"
                 onChangeText={text => setEmail(text)}
                 value={email}
                 style={[styles.input, styles.mail, emailError && styles.inputError]}
@@ -76,12 +76,11 @@ const styles = StyleSheet.create({
         backgroundColor:'#89C2D9',
         
         borderWidth: 1.5,
-        borderRadius: 10,
-        
+
         marginBottom: 18,
         paddingHorizontal: 15,
-        borderRadius: 10,
     },
+    
     inputError: {
         borderColor: 'red',
         color: 'red',
@@ -97,7 +96,7 @@ const styles = StyleSheet.create({
         marginTop:50,
         paddingVertical: 8, 
         paddingHorizontal: 8,
-        borderRadius: 5,
+        borderRadius: 20,
 
     },
 });
