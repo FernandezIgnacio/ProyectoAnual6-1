@@ -3,7 +3,7 @@ import { View, TextInput, StyleSheet, Text, Image, TouchableOpacity, Icon } from
 import { NativeRouter } from 'react-router-native';
 import { Home } from "./Home.jsx";
 
-const Login = ({ onLogin }) => {
+const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState(false);
@@ -16,7 +16,7 @@ const Login = ({ onLogin }) => {
         setEmailError(false);
         return;
 
-        onLogin(email, password);
+        
     };
 
     return (
@@ -27,11 +27,6 @@ const Login = ({ onLogin }) => {
                 onChangeText={text => setEmail(text)}
                 value={email}
                 style={[styles.input, styles.mail, emailError && styles.inputError]}
-                rightIcon= {
-                    <Icon
-                        Type=""
-                    />
-                }
             />
 
             {emailError && <Text style={styles.errorText}>POR FAVOR, INGRESE UN EMAIL VALIDO.</Text>}
