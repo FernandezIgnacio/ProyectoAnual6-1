@@ -2,26 +2,29 @@ import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 import { NativeRouter } from 'react-router-native';
 import { Home } from "./Home.jsx";
+import { FIREBASE_AUTH } from "../../firebase.js";
+
+const handleLogin = () => {
+    if (!email.includes('@')  || !email.includes('.com')){
+    setEmailError(true);
+    return;
+    }else
+    setEmailError(false);
+    return;
+};
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState(false);
-
-    const handleLogin = () => {
-        if (!email.includes('@')  || !email.includes('.com')){
-        setEmailError(true);
-        return;
-        }else
-        setEmailError(false);
-        return;
-
-        
-    };
-
+    const auth = FIREBASE_AUTH;
+    
     return (
         <View style={styles.container}>
+            {/* Logo */}
             <Image source={require('../../assets/icon.png')} style={ styles.Img }/>
+
+            {/* EMAIL */}    
             <TextInput
                 placeholder="Correo"
                 onChangeText={text => setEmail(text)}
@@ -29,8 +32,11 @@ const Login = () => {
                 style={[styles.input, styles.mail, emailError && styles.inputError]}
             />
 
+            {/* TEXTO DE ERROR */}
+
             {emailError && <Text style={styles.errorText}>POR FAVOR, INGRESE UN EMAIL VALIDO.</Text>}
             
+            {/* CONTRASEÑA */}
             <TextInput
                 placeholder="Contraseña"
                 onChangeText={text => setPassword(text)}
@@ -38,7 +44,7 @@ const Login = () => {
                 secureTextEntry
                 style={styles.input}
             />
-            
+            {/* BOTON */}
             <TouchableOpacity
                 style={styles.button}
                 onPress={handleLogin}
