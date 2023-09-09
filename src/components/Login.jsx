@@ -68,7 +68,7 @@ const Login = () => {
 
             {/* TEXTO DE ERROR */}
 
-            {emailError && <Text style={styles.errorText}>POR FAVOR, INGRESE UN EMAIL VALIDO.</Text>}
+            {/* {emailError && <Text style={styles.errorText}>POR FAVOR, INGRESE UN EMAIL VALIDO.</Text>} */}
             
             {/* CONTRASEÑA */}
             <TextInput
@@ -79,12 +79,11 @@ const Login = () => {
                 style={styles.input}
             />
             {/* BOTON */}
-            <TouchableOpacity
-                style={styles.button}
-                onPress={handleLogin}
-            >
-                <Text style={{color: '#012A4A',fontSize: 20,}}>INICIAR SESIÓN</Text>
-            </TouchableOpacity>
+            { loading ? <ActivityIndicator size = "large" color= "#0000ff"/>
+            :  <>
+            
+            </>
+            }
         </View>
     );
 };
