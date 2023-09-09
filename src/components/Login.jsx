@@ -23,15 +23,22 @@ const Login = () => {
     
     const singIn = async () => {
         setLoading(true)
-        try {
-            const response = await signInWithEmailAndPassword(auth, email, password)
-            console.log(response);
-            alert ('Se pudo ingresar con exito!!');
-        } catch (error) {
-            console.log(error);
-            alert ('hubo un error al iniciar sesion: ' + error.message);
-        }finally{
-            setLoading(false);
+
+        if (!email.includes('@')  || !email.includes('.com')){
+            setEmailError(true);
+            return;
+            }else{
+            setEmailError(false);
+            try {
+                const response = await signInWithEmailAndPassword(auth, email, password)
+                console.log(response);
+                alert ('Se pudo ingresar con exito!!');
+            } catch (error) {
+                console.log(error);
+                alert ('hubo un error al iniciar sesion: ' + error.message);
+            }finally{
+                setLoading(false);
+            }
         }
     }
 
@@ -68,7 +75,7 @@ const Login = () => {
 
             {/* TEXTO DE ERROR */}
 
-            {/* {emailError && <Text style={styles.errorText}>POR FAVOR, INGRESE UN EMAIL VALIDO.</Text>} */}
+            {emailError && <Text style={styles.errorText}>POR FAVOR, INGRESE UN EMAIL VALIDO.</Text>}
             
             {/* CONTRASEÑA */}
             <TextInput
