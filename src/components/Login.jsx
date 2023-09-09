@@ -26,8 +26,10 @@ const Login = () => {
         try {
             const response = await signInWithEmailAndPassword(auth, email, password)
             console.log(response);
+            alert ('Se pudo ingresar con exito!!');
         } catch (error) {
             console.log(error);
+            alert ('hubo un error al iniciar sesion: ' + error.message);
         }finally{
             setLoading(false);
         }
