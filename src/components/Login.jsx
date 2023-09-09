@@ -18,6 +18,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState(false);
+    const [loading, setLoading] = useState(false);
     const auth = FIREBASE_AUTH;
     
     const singIn = async () => {}
