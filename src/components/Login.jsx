@@ -3,7 +3,7 @@ import { View, TextInput, StyleSheet, Text, Image, TouchableOpacity} from 'react
 import { Home } from "./Home.jsx";
 import { FIREBASE_AUTH } from "../../firebase.js";
 import { ActivityIndicator } from 'react-native';
-
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
 const handleLogin = () => {
     if (!email.includes('@')  || !email.includes('.com')){
