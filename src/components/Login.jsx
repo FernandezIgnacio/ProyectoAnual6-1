@@ -39,12 +39,12 @@ const Login = () => {
     const singUp = async () => {
         setLoading(true)
         try {
-            const response = await signInWithEmailAndPassword(auth, email, password)
+            const response = await createUserWithEmailAndPassword(auth, email, password)
             console.log(response);
             alert ('Se pudo ingresar con exito!!');
         } catch (error) {
             console.log(error);
-            alert ('hubo un error al iniciar sesion: ' + error.message);
+            alert ('Hubo un error al iniciar sesion: ' + error.message);
         }finally{
             setLoading(false);
         }
