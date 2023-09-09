@@ -24,7 +24,8 @@ const Login = () => {
     const singIn = async () => {
         setLoading(true)
         try {
-            
+            const response = await signInWithEmailAndPassword(auth, email, password)
+            console.log(response);
         } catch (error) {
             
         }finally{
