@@ -4,7 +4,7 @@ import { Home } from "./Home.jsx";
 import { FIREBASE_AUTH } from "../../firebase.js";
 import { ActivityIndicator } from 'react-native';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-
+/*
 const handleLogin = () => {
     if (!email.includes('@')  || !email.includes('.com')){
     setEmailError(true);
@@ -13,7 +13,7 @@ const handleLogin = () => {
     setEmailError(false);
     return;
 };
-
+*/
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
