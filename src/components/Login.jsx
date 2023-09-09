@@ -20,6 +20,9 @@ const Login = () => {
     const [emailError, setEmailError] = useState(false);
     const auth = FIREBASE_AUTH;
     
+    const singIn = async () => {}
+
+
     return (
         <View style={styles.container}>
             {/* Logo */}
