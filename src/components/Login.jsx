@@ -22,12 +22,11 @@ const Login = () => {
     const auth = FIREBASE_AUTH;
     
     const singIn = async () => {
-        setLoading(true)
-
         if (!email.includes('@')  || !email.includes('.com')){
             setEmailError(true);
             return;
         }else{
+            setLoading(true)
             setEmailError(false);
             try {
                 const response = await signInWithEmailAndPassword(auth, email, password)
@@ -44,13 +43,12 @@ const Login = () => {
 
 
     const singUp = async () => {
-        setLoading(true)
-        
         if (!email.includes('@')  || !email.includes('.com')){
             setEmailError(true);
             return;
         }else{
             setEmailError(false);
+            setLoading(true)
             try {
                 const response = await createUserWithEmailAndPassword(auth, email, password)
                 console.log(response);
