@@ -22,12 +22,13 @@ const Login = () => {
     const auth = FIREBASE_AUTH;
     
     const singIn = async () => {
+        setLoading(true)
         try {
             
         } catch (error) {
             
         }finally{
-            
+            setLoading(false);
         }
     }
 
