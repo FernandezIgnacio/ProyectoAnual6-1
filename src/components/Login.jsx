@@ -21,7 +21,15 @@ const Login = () => {
     const [loading, setLoading] = useState(false);
     const auth = FIREBASE_AUTH;
     
-    const singIn = async () => {}
+    const singIn = async () => {
+        try {
+            
+        } catch (error) {
+            
+        }finally{
+            
+        }
+    }
 
 
     return (
