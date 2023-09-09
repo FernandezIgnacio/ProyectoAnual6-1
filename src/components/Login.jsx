@@ -84,6 +84,9 @@ const Login = () => {
                 <TouchableOpacity style={styles.button} onPress={handleLogin}>
                     <Text style={{color: '#012A4A',fontSize: 20,}}>INICIAR SESIÓN</Text>
                 </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={singUP}>
+                    <Text style={{color: '#012A4A',fontSize: 20,}}> REGISTRARSE</Text>
+                </TouchableOpacity>
             </>
             }
         </View>
