@@ -27,7 +27,7 @@ const Login = () => {
         if (!email.includes('@')  || !email.includes('.com')){
             setEmailError(true);
             return;
-            }else{
+        }else{
             setEmailError(false);
             try {
                 const response = await signInWithEmailAndPassword(auth, email, password)
@@ -45,15 +45,23 @@ const Login = () => {
 
     const singUp = async () => {
         setLoading(true)
-        try {
-            const response = await createUserWithEmailAndPassword(auth, email, password)
-            console.log(response);
-            alert ('Se pudo ingresar con exito!!');
-        } catch (error) {
-            console.log(error);
-            alert ('Hubo un error al iniciar sesion: ' + error.message);
-        }finally{
-            setLoading(false);
+        
+        if (!email.includes('@')  || !email.includes('.com')){
+            setEmailError(true);
+            return;
+        }else{
+            setEmailError(false);
+            try {
+                const response = await createUserWithEmailAndPassword(auth, email, password)
+                console.log(response);
+                alert ('Se pudo ingresar con exito!!');
+            } catch (error) {
+                console.log(error);
+                alert ('Hubo un error al iniciar sesion: ' + error.message);
+            }finally{
+                setLoading(false);
+            }
+            return;
         }
     }
 
