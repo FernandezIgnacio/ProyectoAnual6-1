@@ -81,10 +81,10 @@ const Login = () => {
             {/* BOTON */}
             { loading ? <ActivityIndicator size = "large" color= "#0000ff"/>
             :  <>
-                <TouchableOpacity style={styles.button} onPress={handleLogin}>
+                <TouchableOpacity style={styles.button} onPress={singIn}>
                     <Text style={{color: '#012A4A',fontSize: 20,}}>INICIAR SESIÓN</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={singUP}>
+                <TouchableOpacity style={styles.button} onPress={singUp}>
                     <Text style={{color: '#012A4A',fontSize: 20,}}> REGISTRARSE</Text>
                 </TouchableOpacity>
             </>
