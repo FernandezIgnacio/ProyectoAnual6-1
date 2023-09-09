@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
-import { NativeRouter } from 'react-router-native';
 import { Home } from "./Home.jsx";
 import { FIREBASE_AUTH } from "../../firebase.js";
+import { ActivityIndicator } from 'react-native';
+
 
 const handleLogin = () => {
     if (!email.includes('@')  || !email.includes('.com')){
