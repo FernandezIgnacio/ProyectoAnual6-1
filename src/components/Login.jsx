@@ -81,7 +81,9 @@ const Login = () => {
             {/* BOTON */}
             { loading ? <ActivityIndicator size = "large" color= "#0000ff"/>
             :  <>
-            
+                <TouchableOpacity style={styles.button} onPress={handleLogin}>
+                    <Text style={{color: '#012A4A',fontSize: 20,}}>INICIAR SESIÓN</Text>
+                </TouchableOpacity>
             </>
             }
         </View>
