@@ -1,20 +1,10 @@
 import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
-import { Home } from "./Home.jsx";
 import { FIREBASE_AUTH } from "../../firebase.js";
 import { ActivityIndicator } from 'react-native';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
-/*
-const handleLogin = () => {
-    if (!email.includes('@')  || !email.includes('.com')){
-    setEmailError(true);
-    return;
-    }else
-    setEmailError(false);
-    return;
-};
-*/
+
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -42,35 +32,12 @@ const Login = () => {
         }
     }
 
-
-    const singUp = async () => {
-        if (!email.includes('@')  || !email.includes('.com')){
-            setEmailError(true);
-            return;
-        }else{
-            setEmailError(false);
-            setLoading(true)
-            try {
-                const response = await createUserWithEmailAndPassword(auth, email, password)
-                console.log(response);
-                alert ('Se pudo ingresar con exito!!');
-            } catch (error) {
-                console.log(error);
-                alert ('Hubo un error al iniciar sesion: ' + error.message);
-            }finally{
-                setLoading(false);
-            }
-            return;
-        }
-    }
-
-
-
-
     return (
         <View style={styles.container}>
             {/* Logo */}
             <Image source={require('../../assets/icon.png')} style={ styles.Img }/>
+
+            <Text style={styles.text}>SoccourMix</Text>
 
             {/* EMAIL */}    
             <TextInput
@@ -96,10 +63,7 @@ const Login = () => {
             { loading ? <ActivityIndicator size = "large" color= "#0000ff"/>
             :  <>
                 <TouchableOpacity style={styles.button} onPress={singIn}>
-                    <Text style={{color: '#012A4A',fontSize: 20,}}>INICIAR SESIÓN</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={singUp}>
-                    <Text style={{color: '#012A4A',fontSize: 20,}}> REGISTRARSE</Text>
+                    <Text style={{color: '#012A4A',fontSize: 20,}}>INICIAR</Text>
                 </TouchableOpacity>
             </>
             }
@@ -115,13 +79,18 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
         backgroundColor: '#468FAF',
     },
+    
+    text:{
+        fontSize: 30,
+        color:'#FFFFFF',
+    },
     Img: {
         width: 150, 
         height: 150,
-        marginTop: -130,
+        marginBottom: 30,
     },
     mail:{
-       marginTop:100,
+       marginTop:50,
     },
 
     input: {
@@ -152,10 +121,9 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: '#A9D6E5',
         marginTop:50,
-        paddingVertical: 8, 
-        paddingHorizontal: 8,
+        paddingVertical: 15, 
+        paddingHorizontal: 20,
         borderRadius: 20,
-
     },
 });
 
