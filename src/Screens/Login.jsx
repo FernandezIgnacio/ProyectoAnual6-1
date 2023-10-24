@@ -60,10 +60,10 @@ const Login = () => {
                 style={styles.input}
             />
             {/* BOTON */}
-            { loading ? <ActivityIndicator size = "large" color= "#0000ff"/>
+            { loading ? <ActivityIndicator size = "large" color= "#0000ff" style={styles.loading}/>
             :  <>
                 <TouchableOpacity style={styles.button} onPress={singIn}>
-                    <Text style={{color: '#012A4A',fontSize: 20,}}>INICIAR</Text>
+                    <Text style={{color: '#A9D6E5',fontSize: 20,}}>INICIAR</Text>
                 </TouchableOpacity>
             </>
             }
@@ -72,6 +72,9 @@ const Login = () => {
 };
 
 const styles = StyleSheet.create({
+    loading:{
+        marginTop:50,
+    },
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -119,7 +122,7 @@ const styles = StyleSheet.create({
     },
     
     button: {
-        backgroundColor: '#A9D6E5',
+        backgroundColor: '#012A4A',
         marginTop:50,
         paddingVertical: 15, 
         paddingHorizontal: 20,

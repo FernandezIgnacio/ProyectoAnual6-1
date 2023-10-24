@@ -1,7 +1,6 @@
 import { React, useState } from 'react';
-import { View, Text, Button, StyleSheet, Image, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
 
 const Welcome = () => {
   const [loading, setLoading] = useState(false);
@@ -17,7 +16,9 @@ const Welcome = () => {
 
   return (
     <View style={styles.container}>
-      
+      {/* Logo */}
+      <Image source={require('../../assets/icon.png')} style={ styles.Img }/>
+
       {/* Logo */}
       <Text style={styles.text}>Bienvenido a SoccourMix</Text>
 
@@ -25,11 +26,11 @@ const Welcome = () => {
       { loading ? <ActivityIndicator size = "large" color= "#0000ff"/>
         :  <>
           <TouchableOpacity style={styles.button} onPress={handleLoginPress}>
-              <Text style={{color: '#012A4A',fontSize: 20,}}>INICIAR SESIÓN</Text>
+              <Text style={{color: '#A9D6E5',fontSize: 20,}}>INICIAR SESIÓN</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button} onPress={handleRegisterPress} >
-              <Text style={{color: '#012A4A',fontSize: 20,}}> REGISTRARSE</Text>
+              <Text style={{color: '#A9D6E5',fontSize: 20,}}> REGISTRARSE</Text>
           </TouchableOpacity>
       </>
       }
@@ -47,13 +48,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#468FAF',
   },  
   
+  Img: {
+    width: 150, 
+      height: 150,
+      marginBottom: 30,
+  },
   text:{
     fontSize: 30,
     color:'#FFFFFF',
   },
 
   button: {
-    backgroundColor: '#A9D6E5',
+    backgroundColor: '#012A4A',
     marginTop:50,
     paddingVertical: 15, 
     paddingHorizontal: 20,
