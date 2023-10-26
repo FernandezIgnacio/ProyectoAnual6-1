@@ -3,6 +3,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup } from '@firebase/auth';
 import { FIREBASE_AUTH } from '../../firebase';
 
+const auth = FIREBASE_AUTH;
 
 export const AuthContext = createContext();
 
@@ -15,20 +16,21 @@ export default function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   const signup = (email, password) => {
-    createUserWithEmailAndPassword(FIREBASE_AUTH, email, password); // Implement auth methods
+    createUserWithEmailAndPassword(auth, email, password); // Implement auth methods
   };
 
-  //const login = (email, password) => signInWithEmailAndPassword(FIREBASE_AUTH, email, password);
+  const login = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
   const loginWithGoogle = () => {
     const googleProvider = new GoogleAuthProvider();
-    return signInWithPopup(FIREBASE_AUTH, googleProvider); // Implement auth methods
+    return signInWithPopup(auth, googleProvider); // Implement auth methods
   };
 
-  const logout = () => signOut(FIREBASE_AUTH);
+
+  const logout = () => signOut(auth);
 
   useEffect(() => {
-    onAuthStateChanged(FIREBASE_AUTH, currentUser => {
+    onAuthStateChanged(auth, currentUser => {
       setUser(currentUser);
       setLoading(false);
     });

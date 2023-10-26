@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import { View, Text, StyleSheet, Image, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import SingInGoogle from '../components/SingInGoogle.jsx';
 
 const Welcome = () => {
   const [loading, setLoading] = useState(false);
@@ -34,6 +35,9 @@ const Welcome = () => {
           </TouchableOpacity>
       </>
       }
+
+    <SingInGoogle/>
+
     </View>
   );
 };

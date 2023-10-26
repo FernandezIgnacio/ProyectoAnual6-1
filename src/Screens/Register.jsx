@@ -5,7 +5,6 @@ import { FIREBASE_AUTH } from "../../firebase.js";
 import { ActivityIndicator } from 'react-native';
 
 import { createUserWithEmailAndPassword} from 'firebase/auth';
-import SingInGoogle from '../components/SingInGoogle.jsx';
 
 const Register = () => {
   const [Name, setName] = useState('');
@@ -108,7 +107,6 @@ const Register = () => {
               </TouchableOpacity>
             </>
         }
-        <SingInGoogle/>
       </View>
   );
 };
