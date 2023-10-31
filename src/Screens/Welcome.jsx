@@ -37,7 +37,6 @@ const Welcome = () => {
       }
 
     <SingInGoogle/>
-
     </View>
   );
 };

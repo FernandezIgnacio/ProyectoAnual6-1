@@ -9,7 +9,7 @@ WebBrowser.maybeCompleteAuthSession();
 
 
 
-const SingInGoogle = () => {
+const SingInGithub = () => {
   const[accessToken,setAccessToken]= React.useState(null);
   const[user,setUser]= React.useState(null);
   const[request,response, promtAsync]= Google.useIdTokenAuthRequest({
@@ -44,14 +44,7 @@ const SingInGoogle = () => {
   return (
     <View style={styles.container}>
       {user && <ShowUserInfo />}
-      
-      {user === null && 
-      <TouchableOpacity style={styles.opacity} disabled={!request} onPress={promtAsync}>
-        <Image source={require('../../assets/images/googleIcon.png')} style={ styles.Img }/>
-      </TouchableOpacity>
-      }
-
-      {user === null && 
+      {user === null &&
       <TouchableOpacity style={styles.opacity} disabled={!request} onPress={promtAsync}>
         <Image source={require('../../assets/images/githubIcon.png')} style={ styles.Img }/>
       </TouchableOpacity>
@@ -62,32 +55,27 @@ const SingInGoogle = () => {
 
 
 const styles = StyleSheet.create({  
-  container: {
-    flexDirection: 'row',
-    marginTop:40,
-  },
-  box: {
-    width: 100,
-    height: 100,
-    backgroundColor: 'skyblue',
-    textAlign: 'center',
-    lineHeight: 100,
+  button: {
+    backgroundColor: '#012A4A',
+    marginTop:50,
+    paddingVertical: 15, 
+    paddingHorizontal: 20,
+    borderRadius: 20,
   },
   opacity:{
     backgroundColor: '#012A4A',
+    marginTop:50,
     paddingVertical: 15, 
     paddingHorizontal: 15,
     borderRadius: 50,
-    
-    margin: 10,
   },
   Img: {
-    width: 60, 
-    height: 60,
+    width: 40, 
+    height: 40,
   },
 });
 
-export default SingInGoogle;
+export default SingInGithub;
 
 
 /*
