@@ -1,0 +1,56 @@
+.loading {
+    margin-top: 50;
+}
+.container {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16 0 16;
+    background-color: #468FAF;
+}
+
+text {
+    font-size: 30;
+    color: #FFFFFF;
+}
+
+Img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30;
+}
+
+mail {
+    margin-top: 50;
+}
+
+.input{
+    height: 40;
+    width:350;
+    font-size: 17;
+    
+    border-color: #013A63;
+    color:#013A63;
+    background-color:#89C2D9;
+    
+    border-width: 1.5;
+
+    margin-bottom: 18;
+    padding: 0 15 0 15;
+}
+.inputError{
+    border-color: 'red';
+    color: 'red';
+}
+.errorText{
+    color: 'red';
+    margin-top: -19.5;
+    margin-bottom: 3.5;
+}
+
+.button{
+    background-color: '#012A4A';
+    margin-top:50;
+    padding: 15 20 15 20 ;
+    border-radius: 20;
+}
