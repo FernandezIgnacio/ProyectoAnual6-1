@@ -1,10 +1,10 @@
-import { View, Text } from 'react-native'
+import "./style.css"
 
-const Home = () => {
+const Home = () =>{
   return (
-    <View>
-      <Text>Home</Text>
-    </View>
+    <div>
+        holis
+    </div>
   )
 }
 
