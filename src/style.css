@@ -1,5 +1,6 @@
 *{
     background-color: #468FAF;
+    
 }
 
 .container {
@@ -15,7 +16,8 @@
 .Img {
     width: 150px;
     height: 150px;
-    margin-bottom: 30;
+    margin: 100px 0 30px 0;
+    
 }
 
 .input{
