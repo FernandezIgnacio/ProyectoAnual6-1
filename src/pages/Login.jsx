@@ -1,20 +1,17 @@
 import PropTypes from 'prop-types'; // Import prop-types module
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../style.css";
 import icon from "../assets/icon.png"
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, provider } from "../../firebase";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
-
-
-
 
 
 const Login = ({ onLogin }) => {
   const [error, setError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [value,setValue] = useState('')
 
   Login.propTypes = {
     onLogin: PropTypes.func.isRequired,
@@ -37,6 +34,19 @@ const Login = ({ onLogin }) => {
         setError(true);
       });
   };
+
+  const handleGoogle =()=>{
+    signInWithPopup(auth,provider).then((data)=>{
+        setValue(data.user.email)
+        localStorage.setItem("email",data.user.email)
+        navigate("/"); // Navegar a la ruta principal
+        onLogin(); // Actualizar el estado del usuario
+    })
+  }
+
+  useEffect(()=>{
+      setValue(localStorage.getItem('email'))
+  })
 
   return (
     <div>
@@ -62,12 +72,8 @@ const Login = ({ onLogin }) => {
         <button className="button" type="submit">
           Iniciar Sesión
         </button>
-
-        <button onClick={(e) => handleGoogle(e)} className="button">
-          Google
-        </button>
-
         {error && <span>La contraseña o el correo son incorrectos</span>}
+        <button className="button" onClick={handleGoogle}>Google</button>
       </form>
     </div>
   );
