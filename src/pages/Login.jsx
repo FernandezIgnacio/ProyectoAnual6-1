@@ -2,16 +2,19 @@ import PropTypes from 'prop-types'; // Import prop-types module
 import { useEffect, useState } from "react";
 import "../style.css";
 import icon from "../assets/icon.png"
-import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { auth, provider } from "../../firebase";
-import { useNavigate } from "react-router-dom";
+import {  signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, githubProvider, googleProvider } from "../../firebase";
+import { NavLink, useNavigate } from "react-router-dom";
 
+import giticon from "../assets/images/githubIcon.png"
 
 const Login = ({ onLogin }) => {
   const [error, setError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [value,setValue] = useState('')
+  const [value,setValue] = useState("");
+  const [loading, setLoading] = useState(false);   
+  const [gloading, setGloading] = useState(false);
 
   Login.propTypes = {
     onLogin: PropTypes.func.isRequired,
@@ -32,27 +35,48 @@ const Login = ({ onLogin }) => {
       })
       .catch((error) => {
         setError(true);
+        alert(error);
       });
   };
 
-  const handleGoogle =()=>{
-    signInWithPopup(auth,provider).then((data)=>{
-        setValue(data.user.email)
-        localStorage.setItem("email",data.user.email)
-        navigate("/"); // Navegar a la ruta principal
-        onLogin(); // Actualizar el estado del usuario
-    })
+  const handleGoogle = async () =>{
+    setGloading(true);
+    try {
+      await signInWithPopup(auth,googleProvider);
+      navigate("/"); // Navegar a la ruta principal
+      onLogin(); // Actualizar el estado del usuario
+    } catch (error) {    
+      alert(error);
+    } finally {       
+      setGloading(false);     
+    } 
+    
   }
+
+  const handleGithub = async () => {     
+    setLoading(true);  
+    try {
+      await signInWithPopup(auth, githubProvider); 
+      navigate('/'); // Redirige al usuario a la ruta raíz 
+      onLogin(); // Actualizar el estado del usuario   
+    } catch (error) {       
+      alert(error);
+    } finally {
+      setLoading(false);     
+    }   
+  };    
+
 
   useEffect(()=>{
       setValue(localStorage.getItem('email'))
-  })
+  }, [])
 
   return (
     <div>
       
       <form onSubmit={handleLogin} className="container">
       <img src={icon} alt="Icon" className='Img'/>
+        Inicio de sesion
         <input
           id="email"
           className="input mail"
@@ -68,12 +92,23 @@ const Login = ({ onLogin }) => {
           placeholder="Contraseña"
           onChange={(e) => setPassword(e.target.value)}
         />
-
-        <button className="button" type="submit">
-          Iniciar Sesión
-        </button>
         {error && <span>La contraseña o el correo son incorrectos</span>}
-        <button className="button" onClick={handleGoogle}>Google</button>
+
+        <button className="button login" type="submit">
+          Iniciar
+        </button>
+        
+        <NavLink to="/register"><button className='extrabutton'>Crear cuenta</button></NavLink>
+
+        <div className="social">
+          <button className="google" onClick={handleGoogle} disabled={gloading}>
+            {gloading ? "Cargando..." : ""} 
+          </button>
+          <button className="github" onClick={handleGithub} disabled={loading}>       
+            {loading ? "Cargando..." : ""}    
+          </button> 
+        </div>
+
       </form>
     </div>
   );

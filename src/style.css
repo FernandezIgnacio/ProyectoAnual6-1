@@ -10,9 +10,6 @@
     padding: 0 16px 0 16px;
     flex-direction: column;
 }
-
-
-
 .Img {
     width: 150px;
     height: 150px;
@@ -52,26 +49,72 @@
 }
 .button {
     background-color: #012A4A;
-    margin-top: 50px;
+    margin-top: 2px;
     padding: 15px 20px;
     border-radius: 30px;
     border: none;
     font-size: 25px;
     color: #FFFFFF;
-    transition: opacity 0.3s ease; 
+    transition: all 0.5s ease;
+    cursor: pointer;
 }
 
-.button:hover {
-    opacity: 0.85;
+.login:hover {
+    color:#012A4A;
+    background-color: rgb(233, 236, 250);
 }
 
-
-.inputError{
-    border-color: 'red';
-    color: 'red';
+.extrabutton {
+    background-color: rgb(233, 236, 250);
+    margin-top: 2px;
+    padding: 7px 10px;
+    border-radius: 30px;
+    border: none;
+    font-size: 15px;
+    color: #012A4A;
+    transition: all 0.5s ease;
+    cursor: pointer;
 }
-.errorText{
-    color: 'red';
-    margin-top: -19.5px;
-    margin-bottom: 3.5px;
+.extrabutton:hover {
+    background-color:#012A4A;
+    color: rgb(233, 236, 250);
+}
+
+.github{
+    background-image: url("./assets/images/githubIcon.png");
+    height: 80px;
+    width: 80px;
+    background-repeat: no-repeat; 
+    cursor: pointer;
+    border: none;
+    background-position: center; 
+    background-color: #012A4A;
+    margin-top: 25px;
+    border-radius: 50%;
+    margin-left: 20px;
+    transition: all 0.5s ease;
+}
+
+.github:hover{
+    background-image:  url("./assets/images/githubIconSha.png");
+    background-color: rgb(233, 236, 250);
+}
+
+.google{
+    background-image: url("./assets/images/googleIcon.png");
+    height: 80px;
+    width: 80px;
+    background-repeat: no-repeat; 
+    cursor: pointer;
+    border: none;
+    background-position: center; 
+    background-color: #012A4A;
+    margin-top: 25px;
+    border-radius: 50%;
+    margin-right: 20px;
+    transition: all 0.5s ease;
+}
+.google:hover{
+    background-image:  url("./assets/images/googleIconSha.png");
+    background-color: rgb(233, 236, 250);
 }
