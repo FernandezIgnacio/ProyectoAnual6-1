@@ -6,8 +6,6 @@ import {  signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth, githubProvider, googleProvider } from "../../firebase";
 import { NavLink, useNavigate } from "react-router-dom";
 
-import giticon from "../assets/images/githubIcon.png"
-
 const Login = ({ onLogin }) => {
   const [error, setError] = useState(false);
   const [email, setEmail] = useState("");
@@ -102,10 +100,10 @@ const Login = ({ onLogin }) => {
 
         <div className="social">
           <button className="google" onClick={handleGoogle} disabled={gloading}>
-            {gloading ? "Cargando..." : ""} 
+            {gloading ? "Cargando" : ""} 
           </button>
           <button className="github" onClick={handleGithub} disabled={loading}>       
-            {loading ? "Cargando..." : ""}    
+            {loading ? "Cargando" : ""}    
           </button> 
         </div>
 
